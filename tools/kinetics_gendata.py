@@ -68,21 +68,75 @@ def gendata(
         f = open(file_name, "w+")
         f.write(str(300) + '\n')
         for j in range(300):
-            f.write(str(2) + '\n')
+            '''f.write(str(2) + '\n')
             f.write(skeleton_id_1 + '\n')
             f.write(str(18) + '\n')
             for k in range(18):
-                output_data_1 = str(data[0][j][k][0]).strip('[').strip(']') + " " + str(data[1][j][k][0]).strip('[').strip(']') + " " + str(data[2][j][k][0]).strip('[').strip(']') + ' 0 0 0 0 0 0 0 0'
+                output_data_1 = str(data[0][j][k][0]) + " " + str(data[1][j][k][0]) + " " + str(data[2][j][k][0]) + ' 0 0 0 0 0 0 0 0'
                 f.write(str(output_data_1) + '\n')
             f.write(skeleton_id_2 + '\n')
             f.write(str(18) + '\n')
             for l in range(18):
-                output_data_2 = str(data[0][j][l][1]).strip('[').strip(']') + " " + str(data[1][j][l][1]).strip('[').strip(']') + " " + str(data[2][j][l][1]).strip('[').strip(']') + ' 0 0 0 0 0 0 0 0'
-                f.write(str(output_data_2) + '\n')
-        #f.write(str(18) + '\n')
+                output_data_2 = str(data[0][j][l][1]) + " " + str(data[1][j][l][1]) + " " + str(data[2][j][l][1]) + ' 0 0 0 0 0 0 0 0'
+                f.write(str(output_data_2) + '\n')'''
+            f.write(str(2) + '\n')
+            f.write(skeleton_id_1 + '\n')
+            f.write(str(25) + '\n')
+            for k in range(2):
+                body_1_joint_1 = str((data[0][j][8][k] + data[0][j][11][k])/2) + " " + str((data[1][j][8][k] + data[1][j][11][k])/2) + " " + str((data[2][j][8][k] + data[2][j][11][k])/2) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_2 = str(((data[0][j][8][k] + data[0][j][11][k])/2 + data[0][j][1][k])/2) + " " + str(((data[1][j][8][k] + data[1][j][11][k])/2 + data[1][j][1][k])/2) + " " + str(((data[2][j][8][k] + data[2][j][11][k])/2 + data[2][j][1][k])/2) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_3 = str((data[0][j][0][k] + data[0][j][1][k])/2) + " " + str((data[1][j][0][k] + data[1][j][1][k])/2) + " " + str((data[2][j][0][k] + data[2][j][1][k])/2) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_4 = str(data[0][j][0][k]) + " " + str(data[1][j][0][k]) + " " + str(data[2][j][0][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_5 = str(data[0][j][5][k]) + " " + str(data[1][j][5][k]) + " " + str(data[2][j][5][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_6 = str(data[0][j][6][k]) + " " + str(data[1][j][6][k]) + " " + str(data[2][j][6][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_7 = str(data[0][j][7][k]) + " " + str(data[1][j][7][k]) + " " + str(data[2][j][7][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_8 = str(data[0][j][7][k]) + " " + str(data[1][j][7][k]) + " " + str(data[2][j][7][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_9 = str(data[0][j][2][k]) + " " + str(data[1][j][2][k]) + " " + str(data[2][j][2][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_10 = str(data[0][j][3][k]) + " " + str(data[1][j][3][k]) + " " + str(data[2][j][3][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_11 = str(data[0][j][4][k]) + " " + str(data[1][j][4][k]) + " " + str(data[2][j][4][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_12 = str(data[0][j][4][k]) + " " + str(data[1][j][4][k]) + " " + str(data[2][j][4][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_13 = str(data[0][j][11][k]) + " " + str(data[1][j][11][k]) + " " + str(data[2][j][11][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_14 = str(data[0][j][12][k]) + " " + str(data[1][j][12][k]) + " " + str(data[2][j][12][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_15 = str(data[0][j][13][k]) + " " + str(data[1][j][13][k]) + " " + str(data[2][j][13][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_16 = str(data[0][j][13][k]) + " " + str(data[1][j][13][k]) + " " + str(data[2][j][13][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_17 = str(data[0][j][8][k]) + " " + str(data[1][j][8][k]) + " " + str(data[2][j][8][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_18 = str(data[0][j][9][k]) + " " + str(data[1][j][9][k]) + " " + str(data[2][j][9][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_19 = str(data[0][j][10][k]) + " " + str(data[1][j][10][k]) + " " + str(data[2][j][10][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_20 = str(data[0][j][10][k]) + " " + str(data[1][j][10][k]) + " " + str(data[2][j][10][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_21 = str(data[0][j][1][k]) + " " + str(data[1][j][1][k]) + " " + str(data[2][j][1][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_22 = str(data[0][j][7][k]) + " " + str(data[1][j][7][k]) + " " + str(data[2][j][7][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_23 = str(data[0][j][7][k]) + " " + str(data[1][j][7][k]) + " " + str(data[2][j][7][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_24 = str(data[0][j][4][k]) + " " + str(data[1][j][4][k]) + " " + str(data[2][j][4][k]) + ' 0 0 0 0 0 0 0 0'
+                body_1_joint_25 = str(data[0][j][4][k]) + " " + str(data[1][j][4][k]) + " " + str(data[2][j][4][k]) + ' 0 0 0 0 0 0 0 0'
+                f.write(body_1_joint_1 + '\n')
+                f.write(body_1_joint_2 + '\n')
+                f.write(body_1_joint_3 + '\n')
+                f.write(body_1_joint_4 + '\n')
+                f.write(body_1_joint_5 + '\n')
+                f.write(body_1_joint_6 + '\n')
+                f.write(body_1_joint_7 + '\n')
+                f.write(body_1_joint_8 + '\n')
+                f.write(body_1_joint_9 + '\n')
+                f.write(body_1_joint_10 + '\n')
+                f.write(body_1_joint_11 + '\n')
+                f.write(body_1_joint_12 + '\n')
+                f.write(body_1_joint_13 + '\n')
+                f.write(body_1_joint_14 + '\n')
+                f.write(body_1_joint_15 + '\n')
+                f.write(body_1_joint_16 + '\n')
+                f.write(body_1_joint_17 + '\n')
+                f.write(body_1_joint_18 + '\n')
+                f.write(body_1_joint_19 + '\n')
+                f.write(body_1_joint_20 + '\n')
+                f.write(body_1_joint_21 + '\n')
+                f.write(body_1_joint_22 + '\n')
+                f.write(body_1_joint_23 + '\n')
+                f.write(body_1_joint_24 + '\n')
+                f.write(body_1_joint_25 + '\n')
+                if k != 1:
+                    f.write(skeleton_id_2 + '\n')
+                    f.write(str(25) + '\n')
         f.close()
-        #print(skeleton_id_1)
-        #print(str(data[0][1][17][0]))
         #sample_label.append(label)
 
     '''with open(label_out_path, 'wb') as f:
