@@ -64,7 +64,7 @@ def gendata(
         #fp[i, :, 0:data.shape[1], :, :] = data
         skeleton_id_1  = skeleton_id_1 + str(i)
         skeleton_id_2  = skeleton_id_2 + str(i)
-        file_name = data_out_path + '/' + s.split('.')[0] + '.skeleton'
+        file_name = data_out_path + '/' + str(label) + '_' + s.split('.')[0] + '.skeleton'
         f = open(file_name, "w+")
         f.write(str(300) + '\n')
         for j in range(300):
