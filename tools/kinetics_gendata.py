@@ -53,8 +53,8 @@ def gendata(
         dtype='float32',
         mode='w+',
         shape=(len(sample_name), 3, max_frame, 18, num_person_out))'''
-    skeleton_id_1 = '408092820'
-    skeleton_id_2 = '975158737'
+    skeleton_id_1_origin = '408092820'
+    skeleton_id_2_origin = '975158737'
 
     for i, s in enumerate(sample_name):
         data, label = feeder[i]
@@ -62,8 +62,8 @@ def gendata(
                       '({:>5}/{:<5}) Processing data: '.format(
                           i + 1, len(sample_name)))'''
         #fp[i, :, 0:data.shape[1], :, :] = data
-        skeleton_id_1  = skeleton_id_1 + str(i)
-        skeleton_id_2  = skeleton_id_2 + str(i)
+        skeleton_id_1  = skeleton_id_1_origin + str(i)
+        skeleton_id_2  = skeleton_id_2_origin + str(i)
         file_name = data_out_path + '/' + str(label) + '_' + s.split('.')[0] + '.skeleton'
         f = open(file_name, "w+")
         f.write(str(300) + '\n')
