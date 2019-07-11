@@ -58,13 +58,19 @@ def gendata(
 
     for i, s in enumerate(sample_name):
         data, label = feeder[i]
-        '''print_toolbar(i * 1.0 / len(sample_name),
+        print_toolbar(i * 1.0 / len(sample_name),
                       '({:>5}/{:<5}) Processing data: '.format(
-                          i + 1, len(sample_name)))'''
+                          i + 1, len(sample_name)))
         #fp[i, :, 0:data.shape[1], :, :] = data
+        if label < 10:
+            action_id = '00' + str(label)
+        elif label >=10 and label < 100:
+            action_id = '0' + str(label)
+        else:
+            action_id = str(label)
         skeleton_id_1  = skeleton_id_1_origin + str(i)
         skeleton_id_2  = skeleton_id_2_origin + str(i)
-        file_name = data_out_path + '/' + str(label) + '_' + s.split('.')[0] + '.skeleton'
+        file_name = data_out_path + '/' + action_id + '_' + s.split('.')[0] + '.skeleton'
         f = open(file_name, "w+")
         f.write(str(300) + '\n')
         for j in range(300):
@@ -153,7 +159,7 @@ if __name__ == '__main__':
     arg = parser.parse_args()
 
     #part = ['train', 'val']
-    part = ['train']
+    part = ['val']
     for p in part:
         data_path = '{}/kinetics_{}'.format(arg.data_path, p)
         label_path = '{}/kinetics_{}_label.json'.format(arg.data_path, p)
